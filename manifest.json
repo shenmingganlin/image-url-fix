@@ -2,18 +2,12 @@
   "manifestVersion": 2,
   "id": "image-url-fix",
   "name": "如实生图",
-  "version": "0.5.0",
-  "description": "OpenAI 图片中转按设置出图，只给网址时也会把文件下回来。尺寸或格式对上时只交图；对不上时图仍交出，并在输入框上标出差异。",
+  "version": "0.6.0",
+  "description": "Hana 1.0.11 已修好中转只返回网址时收不回图的问题。本应用不再接管协议、不再下载，重心转到交图之后的体验。",
   "entry": "index.js",
   "capabilities": [
-    "app/media.provide",
-    "app/provider.credentials.read",
-    "app/process.spawn",
-    "app/models.read",
-    "app/provider.models.manage",
-    "app/resources.read",
     "app/notifications.show"
   ],
   "icon": "assets/icon.svg",
-  "minAppVersion": "1.0.4-beta"
+  "minAppVersion": "1.0.11-beta"
 }

@@ -5,7 +5,9 @@ function isRecord(value) {
     return value !== null && typeof value === "object" && !Array.isArray(value);
 }
 async function awaitRegistration(value, operation) {
-    const registration = typeof value === "function" || isRecord(value) ? value : null;
+    if (typeof value === "function")
+        return;
+    const registration = isRecord(value) ? value : null;
     if (!registration || !(registration.ready instanceof Promise)) {
         await disposeUnsupportedRegistration(value);
         throw new AppSdkError({ code: "APP_SDK_HOST_UNSUPPORTED", kind: "unsupported", operation,
